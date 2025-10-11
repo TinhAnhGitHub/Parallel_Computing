@@ -1,7 +1,7 @@
 # TASK
-- [ ] Implement native algorithm in OPENMP 
-- [ ] Implement native algorithm in MPI
-- [ ] Implement native algorithm in HYBRID
+- [ ] Implement naive algorithm in OPENMP 
+- [ ] Implement naive algorithm in MPI
+- [ ] Implement naive algorithm in HYBRID
 - [ ] Implement Strassen algorithm in HYBRID
 - [ ] Implement Strassen algorithm in MPI
 - [ ] Implement Strassen algorithm in OPENMP
