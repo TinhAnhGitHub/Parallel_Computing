@@ -1,0 +1,30 @@
+
+
+
+**/.spec-workflow
+
+# Compiled Object files
+*.o
+*.obj
+# Precompiled Headers
+*.gch
+*.pch
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+# Compiled Static libraries
+*.a
+*.lib
+# Executables
+*.exe
+*.out
+*.app
+# Debugger Files
+*.pdb
+*.ilk
+# IDE-specific files (e.g., Visual Studio, CLion)
+vscode/
+idea/
+*.sln
+*.vcxproj*
