@@ -1,0 +1,2 @@
+localhost slots=4
+tinhanh@192.168.1.150 slots=2

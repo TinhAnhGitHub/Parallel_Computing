@@ -16,7 +16,7 @@ Tiny scaffold for a straightforward MPI implementation of C = A × B for square 
 - `mpi-naive/Makefile` (to be created)
 
 ## Checkpoints
-- [ ] Init MPI, parse: `N [--seed S] [--verify]`.
+- [-] Init MPI, parse: `N [--seed S] [--verify]`.
 - [ ] Rank 0: create A[N×N], B[N×N] (pattern or random).
 - [ ] Compute rows per rank (block rows; handle remainder with `Scatterv`).
 - [ ] Broadcast B to all ranks.
