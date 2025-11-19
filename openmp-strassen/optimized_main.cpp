@@ -9,8 +9,8 @@
 #define LOWER_B 0.0
 #define UPPER_B 1.0
 
-#define MAX_DEPTH 3
-#define THRESHOLD 256
+#define MAX_DEPTH 4
+#define THRESHOLD 512
 
 class Timer{
     std::chrono::high_resolution_clock::time_point start_;
@@ -191,6 +191,7 @@ void strassenParallel(
 
     #pragma omp taskgroup
     {
+
         #pragma omp task shared(results)
         {
             std::vector<float> T(m * m);
@@ -235,6 +236,14 @@ void strassenParallel(
             subtractMatrix(m, A12, lda, A22, lda, t1, m);
             addMatrix(m, B21, ldb, B22, ldb, t2, m);
             strassenParallel(m, t1, m, t2, m, M7, m, depth + 1);
+        }
+
+        {
+            std::vector<float> T(2 * m * m);
+            float* t1 = &T[0]; float* t2 = &T[m*m];
+            addMatrix(m, A11, lda, A22, lda, t1, m);
+            addMatrix(m, B11, ldb, B22, ldb, t2, m);
+            strassenParallel(m, t1, m, t2, m, M1, m, depth + 1);
         }
     }
 
@@ -306,6 +315,7 @@ void strassenMatMul(
 int main(){
     int N = 10000;
     std::cout << "Initializing..." << std::endl;
+    omp_set_num_threads(20); 
     auto A = createRandomMatrix(N, 123);
     auto B = createRandomMatrix(N, 456);
     std::vector<float> C(N * N, 0.0f);
