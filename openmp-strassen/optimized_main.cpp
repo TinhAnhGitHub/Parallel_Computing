@@ -147,8 +147,8 @@ void strassenSerial(
     addMatrix(m, B21, ldb, B22, ldb, T2, m);
     strassenSerial(m, T1, m, T2, m, M7, m, nextWork);
 
-    for (int i = 0; i < m ; i++){
-        #pragma omp simd
+    #pragma omp simd collapse(2)
+    for (int i = 0; i < m ; i++){   
         for (int j = 0; j < m; j++){
             int k = i * m + j;
             C[i * ldc + j] = M1[k] + M4[k] - M5[k] + M7[k]; // C11
@@ -279,45 +279,26 @@ void strassenMatMul(
     const std::vector<double>& B, 
     std::vector<double>& C
 ){
-    int paddedSize;
-    int maxDepth = 0;
+    // int paddedSize;
+    // int maxDepth = 0;
     // paddedSize = 1;
     // while (paddedSize < n) {
     //     paddedSize *= 2;
     // }
-    if (n < THRESHOLD)
-    {
-        paddedSize = 1;
-        while (paddedSize < n) {
-            paddedSize *= 2;
-        }
-        maxDepth = 4;
+    int k = THRESHOLD;
+    int paddedSize = ((n + k - 1) / k) * k;
+    int maxDepth = 0;
+    int temp = paddedSize;
+    while (temp > THRESHOLD) { // Limit depth
+        maxDepth++;
+        temp /= 2;
     }
-    else{
-        int k = 1;
-        int tempN = n;
-        
-        while (tempN > THRESHOLD){
-            k *= 2;
-            tempN /= 2;
-        }
-        
 
-        paddedSize = n;
-        if (n % k != 0){
-            paddedSize = ((n/k)+1) * k;
-        }
-        int tmpPaddedsize = paddedSize;
 
-        while (tmpPaddedsize % 2 == 0 && tmpPaddedsize > THRESHOLD){
-            maxDepth ++;
-            tmpPaddedsize /= 2;
-        } 
-
-    }
     
-    std::cout << "Original N: " << n << ", Padded N: " << paddedSize << std::endl;
-    std::cout << "Max depth: " << maxDepth << std::endl;
+
+    std::cout << "N=" << n << ", Padded=" << paddedSize 
+              << ", Depth=" << maxDepth << std::endl;
 
     if (paddedSize == n){
         #pragma omp parallel
