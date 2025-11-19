@@ -332,6 +332,5 @@ int main(){
     double time = t.elapse();
     std::cout << "Time: " << time << "s" << std::endl;
 
-
     return 0;
 }
