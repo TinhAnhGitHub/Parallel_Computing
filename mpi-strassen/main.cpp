@@ -9,7 +9,7 @@
 
 #define LOWER_B 0.0
 #define UPPER_B 1.0
-#define THRESHOLD 1024
+#define THRESHOLD 128
 
 
 class Timer{

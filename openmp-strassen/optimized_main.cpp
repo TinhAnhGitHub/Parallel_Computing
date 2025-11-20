@@ -292,10 +292,7 @@ void strassenMatMul(
     while (temp > THRESHOLD) { // Limit depth
         maxDepth++;
         temp /= 2;
-    }
-
-
-    
+    }    
 
     std::cout << "N=" << n << ", Padded=" << paddedSize 
               << ", Depth=" << maxDepth << std::endl;
@@ -346,7 +343,7 @@ int main(int argc, char ** argv){
     omp_set_num_threads(16); 
     auto A = createRandomMatrix(N, 123);
     auto B = createRandomMatrix(N, 456);
-    std::vector<double> C(N * N, 0.0f);
+    std::vector<double> C(N * N, 0.0);
 
     std::cout << "Starting Strassen..." << std::endl;
     Timer t;
