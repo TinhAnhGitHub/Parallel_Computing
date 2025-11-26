@@ -12,13 +12,16 @@ int main(int argc, char **argv)
     {
         if (rank == 0)
         {
-            std::cerr << "Usage: " << argv[0] << " <N>\n";
+            std::cerr << "Usage: " << argv[0] << " <N> [verify]\n";
+            std::cerr << "  N: Matrix size\n";
+            std::cerr << "  verify: 0=skip, 1=verify (default: 0)\n";
         }
         MPI_Finalize();
         return 1;
     }
 
     int N = std::atoi(argv[1]); // Size of the square matrix
+    int verify = (argc > 2) ? std::atoi(argv[2]) : 0;
 
     if (N % num_procs != 0)
     {
@@ -52,6 +55,31 @@ int main(int argc, char **argv)
     if (rank == 0)
     {
         std::cout << "Maximum local computation time among processes: " << max_local_time << " seconds\n";
+    }
+
+    // Verification (optional)
+    if (verify && rank == 0)
+    {
+        std::cout << "\n================================================" << std::endl;
+        std::cout << "Verifying Correctness..." << std::endl;
+        std::cout << "================================================" << std::endl;
+
+        double verify_start = MPI_Wtime();
+        std::vector<int> C_verify(N * N, 0);
+        serialVerify(N, A, B, C_verify);
+        double verify_time = MPI_Wtime() - verify_start;
+
+        std::cout << "Serial verification time: " << verify_time << "s" << std::endl;
+
+        bool passed = verifyResults(N, C, C_verify, rank);
+
+        if (passed)
+        {
+            double total_time = MPI_Wtime() - start_time;
+            std::cout << "\nSpeedup vs Serial: " << std::fixed << std::setprecision(2)
+                      << verify_time / total_time << "x" << std::endl;
+        }
+        std::cout << "================================================" << std::endl;
     }
 
     MPI_Finalize();
