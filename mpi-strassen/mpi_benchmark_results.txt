@@ -1,0 +1,100 @@
+make[1]: Entering directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+==========================================
+RUNNING ALL TEST CASES (MPI)
+This will take a while...
+==========================================
+
+make[2]: Entering directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+==========================================
+TEST CASE: Assignment Matrix Sizes (MPI)
+Testing: 100x100, 1000x1000, 10000x10000
+Processes: 7
+==========================================
+
+Size: 100x100
+------------------------------------------
+mpirun -np 7 ./mpi_program 100 0
+N=100, Padded=128
+28672
+Strassen completed in 0.0026126 seconds.
+
+Size: 1000x1000
+------------------------------------------
+mpirun -np 7 ./mpi_program 1000 0
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.0303416 seconds.
+
+Size: 10000x10000
+------------------------------------------
+mpirun -np 7 ./mpi_program 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 10.3482 seconds.
+
+make[2]: Leaving directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+make[2]: Entering directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+==========================================
+TEST CASE: Scalability Study - 100x100
+Strong Scaling (fixed problem size)
+==========================================
+
+Processes: 7
+N=100, Padded=128
+28672
+Strassen completed in 0.00159143 seconds.
+
+==========================================
+TEST CASE: Scalability Study - 1000x1000
+Strong Scaling (fixed problem size)
+==========================================
+
+Processes: 7
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.0312133 seconds.
+
+==========================================
+TEST CASE: Scalability Study - 10000x10000
+Strong Scaling (fixed problem size)
+==========================================
+
+Processes: 7
+N=10000, Padded=10112
+178941952
+Strassen completed in 9.66215 seconds.
+
+make[2]: Leaving directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+make[2]: Entering directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+==========================================
+TEST CASE: Process Configuration Study
+==========================================
+
+Note: This Strassen implementation requires exactly 7 processes.
+Process scaling tests are not applicable.
+
+Testing with 7 processes on different matrix sizes instead:
+
+Size: 100x100
+------------------------------------------
+mpirun -np 7 ./mpi_program 100 0
+N=100, Padded=128
+28672
+Strassen completed in 0.00139961 seconds.
+
+Size: 1000x1000
+------------------------------------------
+mpirun -np 7 ./mpi_program 1000 0
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.0304399 seconds.
+
+Size: 5000x5000
+------------------------------------------
+mpirun -np 7 ./mpi_program 5000 0
+N=5000, Padded=5120
+45875200
+Strassen completed in 1.68368 seconds.
+
+make[2]: Leaving directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'
+make[1]: Leaving directory '/mnt/e/workspace/uni/sem9/parallel/Parallel_Computing/mpi-strassen'

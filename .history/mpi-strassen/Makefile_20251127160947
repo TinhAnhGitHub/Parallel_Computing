@@ -100,29 +100,24 @@ test-scalability-10000: $(TARGET)
 	done
 
 test-scalability-all: test-scalability-100 test-scalability-1000 test-scalability-10000
-# Test Case 3: Process Configuration Study - N/A for this Strassen implementation
+
+# Test Case 3: Process Configuration Study
 test-process-configs: $(TARGET)
 	@echo "=========================================="
 	@echo "TEST CASE: Process Configuration Study"
+	@echo "Testing various process counts on 1000x1000"
 	@echo "=========================================="
 	@echo ""
-	@echo "Note: This Strassen implementation requires exactly 7 processes."
-	@echo "Process scaling tests are not applicable."
-	@echo ""
-	@echo "Testing with 7 processes on different matrix sizes instead:"
-	@echo ""
-	@echo "Size: 100x100"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 100 0
-	@echo ""
-	@echo "Size: 1000x1000"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 1000 0
-	@echo ""
-	@echo "Size: 5000x5000"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 5000 0
-	@echo ""
+	@for procs in 1 2 4 5 8 10 16 20; do \
+		if [ $$((1000 % $$procs)) -eq 0 ]; then \
+			echo "Processes: $$procs"; \
+			mpirun -np $$procs ./$(TARGET) 1000; \
+			echo ""; \
+		else \
+			echo "Skipping $$procs processes (1000 not divisible)"; \
+		fi; \
+	done
+
 # ==========================================
 # COMPREHENSIVE TEST SUITES
 # ==========================================
@@ -238,8 +233,8 @@ compare-assignment: $(TARGET)
 	@total_1000=0; \
 	for i in $$(seq 1 $(NUM_RUNS)); do \
 		echo "  Run $$i/$(NUM_RUNS)..."; \
-		output=$$(mpirun -np $(NP) ./$(TARGET) 1000 0 2>&1); \
-		time=$$(echo "$$output" | grep "Strassen completed in" | awk '{print $$4}'); \
+		output=$$(mpirun -np $(NP) ./$(TARGET) 1000 2>&1); \
+		time=$$(echo "$$output" | grep "Total execution time:" | awk '{print $$4}'); \
 		if [ -n "$$time" ]; then \
 			total_1000=$$(awk "BEGIN {printf \"%.9f\", $$total_1000 + $$time}"); \
 			echo "1000,$$i,$$time" >> mpi_comparison_results.csv; \
@@ -255,8 +250,8 @@ compare-assignment: $(TARGET)
 	@total_10000=0; \
 	for i in $$(seq 1 $(NUM_RUNS)); do \
 		echo "  Run $$i/$(NUM_RUNS)..."; \
-		output=$$(mpirun -np $(NP) ./$(TARGET) 10000 0 2>&1); \
-		time=$$(echo "$$output" | grep "Strassen completed in" | awk '{print $$4}'); \
+		output=$$(mpirun -np $(NP) ./$(TARGET) 10000 2>&1); \
+		time=$$(echo "$$output" | grep "Total execution time:" | awk '{print $$4}'); \
 		if [ -n "$$time" ]; then \
 			total_10000=$$(awk "BEGIN {printf \"%.9f\", $$total_10000 + $$time}"); \
 			echo "10000,$$i,$$time" >> mpi_comparison_results.csv; \
@@ -306,13 +301,15 @@ export-csv-scalability: $(TARGET)
 	@echo "size,processes,time,speedup" > mpi_scalability_data.csv
 	@echo "# Scalability data for 1000x1000"
 	@# Get baseline (1 process)
-	@baseline=$$(mpirun -np 7 ./$(TARGET) 1000 0 2>&1 | grep "Strassen completed in" | awk '{print $$4}'); \
-	echo "Baseline (7 processes): $$baseline seconds"; \
-	for procs in 7; do \
-		echo "Testing $$procs processes..."; \
-		time=$$(mpirun -np $$procs ./$(TARGET) 1000 0 2>&1 | grep "Strassen completed in" | awk '{print $$4}'); \
-		speedup=$$(awk "BEGIN {printf \"%.4f\", $$baseline / $$time}"); \
-		echo "1000,$$procs,$$time,$$speedup" >> mpi_scalability_data.csv; \
+	@baseline=$$(mpirun -np 1 ./$(TARGET) 1000 2>&1 | grep "Total execution time:" | awk '{print $$4}'); \
+	echo "Baseline (1 process): $$baseline seconds"; \
+	for procs in 1 2 4 8 16; do \
+		if [ $$((1000 % $$procs)) -eq 0 ]; then \
+			echo "Testing $$procs processes..."; \
+			time=$$(mpirun -np $$procs ./$(TARGET) 1000 2>&1 | grep "Total execution time:" | awk '{print $$4}'); \
+			speedup=$$(awk "BEGIN {printf \"%.4f\", $$baseline / $$time}"); \
+			echo "1000,$$procs,$$time,$$speedup" >> mpi_scalability_data.csv; \
+		fi; \
 	done
 	@echo "Data saved to: mpi_scalability_data.csv"
 

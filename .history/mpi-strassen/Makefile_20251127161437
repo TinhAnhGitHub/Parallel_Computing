@@ -100,29 +100,40 @@ test-scalability-10000: $(TARGET)
 	done
 
 test-scalability-all: test-scalability-100 test-scalability-1000 test-scalability-10000
-# Test Case 3: Process Configuration Study - N/A for this Strassen implementation
+
+# Test Case 3: Process Configuration Study
 test-process-configs: $(TARGET)
 	@echo "=========================================="
-	@echo "TEST CASE: Process Configuration Study"
-	@echo "=========================================="
-	@echo ""
-	@echo "Note: This Strassen implementation requires exactly 7 processes."
-	@echo "Process scaling tests are not applicable."
-	@echo ""
-	@echo "Testing with 7 processes on different matrix sizes instead:"
-	@echo ""
-	@echo "Size: 100x100"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 100 0
-	@echo ""
-	@echo "Size: 1000x1000"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 1000 0
-	@echo ""
-	@echo "Size: 5000x5000"
-	@echo "------------------------------------------"
-	mpirun -np 7 ./$(TARGET) 5000 0
-	@echo ""
+    @echo "TEST CASE: Process Configuration Study"
+    @echo "=========================================="
+    @echo ""
+    @echo "Note: This Strassen implementation requires exactly 7 processes."
+    @echo "Process scaling tests are not applicable."
+    @echo ""
+    @echo "Testing with 7 processes on different matrix sizes instead:"
+    @echo ""
+    @echo "Size: 100x100"
+    @echo "------------------------------------------"
+    mpirun -np 7 ./$(TARGET) 100 0
+    @echo ""
+    @echo "Size: 1000x1000"
+    @echo "------------------------------------------"
+    mpirun -np 7 ./$(TARGET) 1000 0
+    @echo ""
+    @echo "Size: 5000x5000"
+    @echo "------------------------------------------"
+    mpirun -np 7 ./$(TARGET) 5000 0
+    @echo ""
+	@for procs in 1 2 4 5 8 10 16 20; do \
+		if [ $$((1000 % $$procs)) -eq 0 ]; then \
+			echo "Processes: $$procs"; \
+			mpirun -np $$procs ./$(TARGET) 1000; \
+			echo ""; \
+		else \
+			echo "Skipping $$procs processes (1000 not divisible)"; \
+		fi; \
+	done
+
 # ==========================================
 # COMPREHENSIVE TEST SUITES
 # ==========================================
