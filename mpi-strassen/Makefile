@@ -3,6 +3,7 @@ CXXFLAGS = -std=c++17 -O3 -march=native
 EXECUTABLE = strassen_mpi
 SOURCES = main.cpp
 NP = 7
+
 .PHONY: all
 all: $(EXECUTABLE)
 
@@ -16,21 +17,21 @@ $(EXECUTABLE): $(SOURCES)
 test100: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=100 (Check ON) ---"
-	mpirun -np --hostfile host.txt $(NP) ./$(EXECUTABLE) 100 1
+	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 100 1
 
 
 .PHONY: test1000
 test1000: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=1000 (Check ON) ---"
-	mpirun -np --hostfile host.txt  $(NP) ./$(EXECUTABLE) 1000 1
+	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 1000 1
 
 
 .PHONY: test10000
 test10000: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=10000 (Check ON) ---"
-	mpirun -np --hostfile host.txt $(NP) ./$(EXECUTABLE) 10000 1
+	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 10000 1
 
 .PHONY: test_all
 test_all: test100 test1000 test10000
