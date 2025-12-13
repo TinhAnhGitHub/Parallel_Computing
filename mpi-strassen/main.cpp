@@ -376,14 +376,7 @@ int main(int argc, char**argv){
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &numProcs);
 
-    if (numProcs != 7){
-        if (rank == 0) {
-            std::cerr << "Error: This implementation requires exactly 7 processes.\n";
-        }
-        MPI_Finalize();
-        return 1;
-    }
-
+   
     if (argc < 3) {
         if (rank == 0) {
             std::cerr << "Usage: " << " <matrix_size>" << "  <check err>  ";

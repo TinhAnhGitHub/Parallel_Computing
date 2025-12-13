@@ -17,7 +17,7 @@ $(EXECUTABLE): $(SOURCES)
 test100: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=100 (Check ON) ---"
-	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 100 1
+	mpirun -np $(NP) ./$(EXECUTABLE) 100 1
 
 
 .PHONY: test1000
