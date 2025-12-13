@@ -1,0 +1,17 @@
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 4 ./naive_mpi 100
+
+Total execution time: 0.00310587 seconds
+Maximum local computation time among processes: 4.4466e-05 seconds
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8  ./naive_mpi 1000
+
+Total execution time: 0.21334 seconds
+Maximum local computation time among processes: 0.0269323 seconds
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./naive_mpi 10000
+[mpiexec@MPI-node16] Sending Ctrl-C to processes as requested
+[mpiexec@MPI-node16] Press Ctrl-C again to force abort

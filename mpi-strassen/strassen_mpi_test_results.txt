@@ -1,0 +1,24 @@
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.00738555 seconds.
+Naive completed in 0.000184152 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.305624 seconds.
+Naive completed in 0.145125 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 1
+N=10000, Padded=10112
+178941952
+Strassen completed in 39.9375 seconds.
+[mpiexec@MPI-node16] Sending Ctrl-C to processes as requested
+[mpiexec@MPI-node16] Press Ctrl-C again to force abort

@@ -17,21 +17,21 @@ $(EXECUTABLE): $(SOURCES)
 test100: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=100 (Check ON) ---"
-	mpirun -np $(NP) ./$(EXECUTABLE) 100 1
+	mpirun -np 4 --hostfile host.txt  ./$(EXECUTABLE) 100 1
 
 
 .PHONY: test1000
 test1000: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=1000 (Check ON) ---"
-	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 1000 1
+	mpirun --hostfile host.txt -np 8 ./$(EXECUTABLE) 1000 1
 
 
 .PHONY: test10000
 test10000: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=10000 (Check ON) ---"
-	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 10000 0
+	mpirun --hostfile host.txt -np 8 ./$(EXECUTABLE) 10000 0
 
 .PHONY: test_all
 test_all: test100 test1000 test10000

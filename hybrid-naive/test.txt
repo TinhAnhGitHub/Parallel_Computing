@@ -1,0 +1,317 @@
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00522951s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.2316e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.194413s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0229036s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 91.3941s
+Max local compute time: 71.801s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00508331s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.5348e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.384171s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0228997s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 91.455s
+Max local compute time: 71.7159s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00482004s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 3.9135e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.195679s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0228133s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 90.8924s
+Max local compute time: 71.5844s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00468005s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.1597e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.190211s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0225801s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 89.3074s
+Max local compute time: 69.9875s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00497357s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.9648e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.197671s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0228125s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 89.223s
+Max local compute time: 69.8641s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00529824s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.8251e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.386351s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0228176s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 89.4216s
+Max local compute time: 69.7551s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00478135s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.1921e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.199549s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0228853s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 88.5903s
+Max local compute time: 69.5844s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00464201s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.8022e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.187201s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0227403s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 89.3314s
+Max local compute time: 69.5593s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.00465935s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.2479e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.193864s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0223582s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+Total Time: 87.9597s
+Max local compute time: 68.7274s
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 100 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 100x100
+Total Time: 0.0045718s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 4.3437e-05s
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 1000 1
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 1000x1000
+Total Time: 0.393772s
+Verifying results (Serial check)...
+Relative Error: 0
+Max local compute time: 0.0230589s
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./main 10000 0
+Initializing Hybrid MPI+OpenMP...
+MPI Ranks: 8
+Matrix Size: 10000x10000
+[mpiexec@MPI-node16] Sending Ctrl-C to processes as requested
+[mpiexec@MPI-node16] Press Ctrl-C again to force abort

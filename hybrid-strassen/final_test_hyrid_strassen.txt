@@ -1,0 +1,260 @@
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.0072158 seconds.
+Naive completed in 0.000203522 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.291918 seconds.
+Naive completed in 0.167812 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.2843 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00742881 seconds.
+Naive completed in 0.00018479 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.282759 seconds.
+Naive completed in 0.161038 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.0702 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00781357 seconds.
+Naive completed in 0.000175941 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.278636 seconds.
+Naive completed in 0.155668 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 41.0555 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00735663 seconds.
+Naive completed in 0.000178062 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.285587 seconds.
+Naive completed in 0.158529 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.1318 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00765701 seconds.
+Naive completed in 0.000161518 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.295904 seconds.
+Naive completed in 0.137991 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.0926 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00680686 seconds.
+Naive completed in 0.000177359 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.286729 seconds.
+Naive completed in 0.159829 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.2876 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00679521 seconds.
+Naive completed in 0.00019365 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.298278 seconds.
+Naive completed in 0.137727 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.7707 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00737525 seconds.
+Naive completed in 0.000182884 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.290656 seconds.
+Naive completed in 0.138962 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.2511 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00754107 seconds.
+Naive completed in 0.000171611 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.293743 seconds.
+Naive completed in 0.154291 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 39.8901 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 100 1
+N=100, Padded=128, Depth=4
+28672
+Strassen completed in 0.00715545 seconds.
+Naive completed in 0.000179318 seconds.
+Relative L2 error: 6.50192e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 1000 1
+N=1000, Padded=1024, Depth=4
+1835008
+Strassen completed in 0.291123 seconds.
+Naive completed in 0.138928 seconds.
+Relative L2 error: 1.33915e-06
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./main 10000 0
+N=10000, Padded=10112, Depth=4
+178941952
+Strassen completed in 40.0005 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 

@@ -1,0 +1,84 @@
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun -np 4 --hostfile host.txt  ./strassen_mpi 100 1
+
+Total execution time: 0.003736 seconds
+Maximum local computation time among processes: 4.5675e-05 seconds
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 1000 1
+
+Total execution time: 0.230872 seconds
+Maximum local computation time among processes: 0.0297314 seconds
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 10000 0
+
+Total execution time: 86.5288 seconds
+Maximum local computation time among processes: 63.5918 seconds
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun -np 4 --hostfile host.txt  ./strassen_mpi 100 1
+
+Total execution time: 0.00289521 seconds
+Maximum local computation time among processes: 4.0131e-05 seconds
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 1000 1
+
+Total execution time: 0.20723 seconds
+Maximum local computation time among processes: 0.0246181 seconds
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 10000 0
+
+Total execution time: 86.1318 seconds
+Maximum local computation time among processes: 63.5347 seconds
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun -np 4 --hostfile host.txt  ./strassen_mpi 100 1
+
+Total execution time: 0.00316259 seconds
+Maximum local computation time among processes: 5.9472e-05 seconds
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 1000 1
+
+Total execution time: 0.208979 seconds
+Maximum local computation time among processes: 0.0223005 seconds
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 10000 0
+
+Total execution time: 86.753 seconds
+Maximum local computation time among processes: 63.928 seconds
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun -np 4 --hostfile host.txt  ./strassen_mpi 100 1
+
+Total execution time: 0.00301457 seconds
+Maximum local computation time among processes: 4.465e-05 seconds
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 1000 1
+
+Total execution time: 0.228988 seconds
+Maximum local computation time among processes: 0.0224236 seconds
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 8 ./strassen_mpi 10000 0
+[mpiexec@MPI-node16] Sending Ctrl-C to processes as requested
+[mpiexec@MPI-node16] Press Ctrl-C again to force abort

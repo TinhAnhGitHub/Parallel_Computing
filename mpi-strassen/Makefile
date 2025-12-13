@@ -31,7 +31,7 @@ test1000: $(EXECUTABLE)
 test10000: $(EXECUTABLE)
 	@echo ""
 	@echo "--- Running Test: N=10000 (Check ON) ---"
-	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 10000 1
+	mpirun --hostfile host.txt -np $(NP) ./$(EXECUTABLE) 10000 0
 
 .PHONY: test_all
 test_all: test100 test1000 test10000

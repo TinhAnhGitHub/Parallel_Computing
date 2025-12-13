@@ -1,0 +1,130 @@
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.006706 seconds.
+Naive completed in 0.000243815 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.286777 seconds.
+Naive completed in 0.161403 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 39.9437 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.00663778 seconds.
+Naive completed in 0.000183234 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.290941 seconds.
+Naive completed in 0.140708 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 39.4481 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.00700916 seconds.
+Naive completed in 0.000192578 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.28572 seconds.
+Naive completed in 0.141407 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 39.9292 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.00737213 seconds.
+Naive completed in 0.000176048 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.287995 seconds.
+Naive completed in 0.13508 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 40.1231 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 
+-- running --
+
+--- Running Test: N=100 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 100 1
+N=100, Padded=128
+28672
+Strassen completed in 0.00711621 seconds.
+Naive completed in 0.000179773 seconds.
+Relative L2 error: 2.30051e-07
+
+--- Running Test: N=1000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 1000 1
+N=1000, Padded=1024
+1835008
+Strassen completed in 0.298946 seconds.
+Naive completed in 0.161648 seconds.
+Relative L2 error: 8.97486e-07
+
+--- Running Test: N=10000 (Check ON) ---
+mpirun --hostfile host.txt -np 7 ./strassen_mpi 10000 0
+N=10000, Padded=10112
+178941952
+Strassen completed in 40.1901 seconds.
+
+--- All tests completed. ---
+-- finish iteration -- 

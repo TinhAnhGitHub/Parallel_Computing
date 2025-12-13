@@ -2,7 +2,7 @@ CXX = mpicxx
 CXXFLAGS = -std=c++17 -O3 -march=native
 EXECUTABLE = main
 SOURCES = main.cpp
-NP = 7
+NP = 8
 
 .PHONY: all
 all: $(EXECUTABLE)
